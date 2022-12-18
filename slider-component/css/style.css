@@ -1,3 +1,9 @@
+:root {
+    --slider-height: 50vh;
+    --slider-width: 70vw;
+    --nav-btn-size: 2rem;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,8 +25,8 @@
   
   .slider {
     display: flex;
-    width: 70vw;
-    height: 50vh;
+    width: var(--slider-width);
+    height: var(--slider-height);
     justify-content: start;
     background: white;
     overflow-x: auto;
@@ -46,23 +52,23 @@
 
   .nav {
     position: absolute;
-    top: 50%;
+    top: calc(var(--slider-height) / 2 - var(--nav-btn-size) / 2);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    width: 2rem;
-    height: 2rem;
+    width: var(--nav-btn-size);
+    height: var(--nav-btn-size);
     background: white;
     border-radius: 50%;
   }
 
   .next {
-    right: 3rem;
+    right: calc((100vw - var(--slider-width)) / 2 - 3rem);
   }
 
   .prev {
-    left: 3rem;
+    left: calc((100vw - var(--slider-width)) / 2 - 3rem);
   }
 
   .nav:hover {
@@ -70,7 +76,9 @@
     opacity: .8;
   }
 
-
+  [hidden] {
+    display: none;
+  }
   
   /* .slider::-webkit-scrollbar-track {
     -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
