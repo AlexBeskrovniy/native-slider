@@ -1,7 +1,7 @@
 :root {
-    --slider-height: 50vh;
-    --slider-width: 70vw;
-    --nav-btn-size: 2rem;
+    --slider-height: 100vh;
+    --slider-width: 90vw;
+    --nav-btn-size: 3rem;
 }
 
 * {
@@ -20,7 +20,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
+    min-height: 100vh;
   }
   
   .slider {
@@ -35,7 +36,8 @@
   
   .slide {
     height: 100%;
-    min-width: 70vw;
+    /* min-width: 70vw; */
+    min-width: var(--slider-width);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,16 +61,18 @@
     font-size: 1.5rem;
     width: var(--nav-btn-size);
     height: var(--nav-btn-size);
-    background: white;
+    background: black;
+    color: white;
     border-radius: 50%;
+    opacity: .64;
   }
 
   .next {
-    right: calc((100vw - var(--slider-width)) / 2 - 3rem);
+    right: calc((100vw - var(--slider-width)) / 2 + 2rem);
   }
 
   .prev {
-    left: calc((100vw - var(--slider-width)) / 2 - 3rem);
+    left: calc((100vw - var(--slider-width)) / 2 + 2rem);
   }
 
   .nav:hover {
